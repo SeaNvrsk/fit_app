@@ -32,8 +32,8 @@ export function ParallaxMedia({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const travel = intensity === "subtle" ? (["-8%", "8%"] as const) : (["-16%", "16%"] as const);
-  const zoom = intensity === "subtle" ? ([1.08, 1.02] as const) : ([1.2, 1.05] as const);
+  const travel: string[] = intensity === "subtle" ? ["-8%", "8%"] : ["-16%", "16%"];
+  const zoom: number[] = intensity === "subtle" ? [1.08, 1.02] : [1.2, 1.05];
   const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : travel);
   const scale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : zoom);
   const inset = intensity === "subtle" ? "absolute -inset-[8%] will-change-transform" : "absolute -inset-[18%] will-change-transform";
