@@ -22,7 +22,7 @@ export function CoachesPreview() {
         </Reveal>
         <ParallaxMedia
           src={media.rack}
-          alt="Rack de mancuernas de performance en BBH"
+          alt="Rack de mancuernas de rendimiento en BBH"
           className="min-h-[360px] lg:min-h-[520px]"
         />
       </div>

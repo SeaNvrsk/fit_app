@@ -29,7 +29,7 @@ export function ContactForm() {
     if (!isPlaceholder(site.contact.email)) {
       const body = [
         `Nombre: ${name}`,
-        `Email: ${email}`,
+        `Correo: ${email}`,
         `WhatsApp: ${phone}`,
         `Interés: ${interest}`,
         "",
@@ -58,7 +58,7 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <Field label="Nombre" name="name" required />
-      <Field label="Email" name="email" type="email" required />
+      <Field label="Correo" name="email" type="email" required />
       <Field label="WhatsApp" name="phone" />
       <label className="block">
         <span className="font-display text-[11px] tracking-[0.18em] text-bbh-gold">INTERÉS</span>
@@ -86,7 +86,7 @@ export function ContactForm() {
         type="submit"
         className="bg-bbh-gold px-6 py-3 font-display text-[11px] font-semibold tracking-[0.18em] text-bbh-black hover:bg-[#e4b83a]"
       >
-        TRAIN WITH US
+        ENTRENA CON NOSOTROS
       </button>
     </form>
   );

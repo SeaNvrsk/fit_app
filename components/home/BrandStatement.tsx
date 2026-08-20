@@ -8,7 +8,7 @@ export function BrandStatement() {
   return (
     <Section>
       <Reveal>
-        <SectionIndex>{home.statement.index} — THE HOUSE</SectionIndex>
+        <SectionIndex>{home.statement.index} — LA CASA</SectionIndex>
         <DisplayTitle as="h2" className="max-w-5xl">
           {home.statement.title[0]}
           <br />

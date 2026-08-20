@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <p className="font-display text-3xl font-bold tracking-[0.14em]">BBH</p>
           <p className="mt-3 font-display text-sm tracking-[0.18em] text-bbh-gold">
-            THE HOUSE OF CHAMPIONS
+            LA CASA DE LOS CAMPEONES
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-bbh-off">
             Si quieres ser el mejor, entrena con los mejores.
@@ -49,8 +49,8 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-14 flex max-w-[1280px] flex-col gap-3 border-t border-white/8 pt-6 text-xs text-bbh-off/60 md:flex-row md:justify-between">
-        <p>© {new Date().getFullYear()} BBH. The House of Champions.</p>
-        <p>ELITE · COMPETITIVE · PREMIUM · PERFORMANCE · COMMUNITY</p>
+        <p>© {new Date().getFullYear()} BBH. Build Beyond Humans.</p>
+        <p>ÉLITE · COMPETITIVO · EXCLUSIVO · RENDIMIENTO · COMUNIDAD</p>
       </div>
     </footer>
   );

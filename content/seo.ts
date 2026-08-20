@@ -2,44 +2,44 @@ import { site } from "./site";
 
 export const pagesMeta = {
   home: {
-    title: "BBH — The House of Champions | Performance Club",
+    title: "BBH — La Casa de los Campeones | Club de rendimiento",
     description: site.description,
     path: "/",
   },
   clases: {
-    title: "Clases | BBH Training System",
+    title: "Clases | Sistema de entrenamiento BBH",
     description:
-      "Sistema de entrenamiento BBH: Lower Strength, Upper Push, Upper Pull, Hybrid Performance, Lower Engine, HYROX Performance y Aerobic Engine.",
+      "Sistema de entrenamiento BBH: Fuerza Inferior, Empuje Superior, Tracción Superior, Rendimiento Híbrido, Motor Inferior, Rendimiento HYROX y Motor Aeróbico.",
     path: "/clases",
   },
   horario: {
     title: "Horario | BBH",
     description:
-      "Horario de clases de performance en BBH. Strength, hybrid training, engine y HYROX training.",
+      "Horario de clases de rendimiento en BBH. Fuerza, entrenamiento híbrido, motor y preparación HYROX.",
     path: "/horario",
   },
   coaches: {
-    title: "Coaches | Elite Coaching BBH",
+    title: "Entrenadores | Entrenamiento de élite BBH",
     description:
-      "Los coaches de BBH son especialistas en rendimiento. Elite coaching para atletas que quieren competir.",
+      "Los entrenadores de BBH son especialistas en rendimiento. Entrenamiento de élite para atletas que quieren competir.",
     path: "/coaches",
   },
   eventos: {
     title: "Eventos | BBH",
     description:
-      "Time trials, simulaciones HYROX y preparación de competición en The House of Champions.",
+      "Contrarreloj, simulaciones HYROX y preparación de competencia en La Casa de los Campeones.",
     path: "/eventos",
   },
   personalizados: {
     title: "Entrenamiento personalizado | BBH",
     description:
-      "Coaching 1:1, small group y race strategy. Performance training a la medida del atleta.",
+      "Entrenamiento 1 a 1, grupo reducido y estrategia de carrera. Rendimiento a la medida del atleta.",
     path: "/personalizados",
   },
   contacto: {
-    title: "Contacto | Train with us — BBH",
+    title: "Contacto | Entrena con nosotros — BBH",
     description:
-      "Empieza en BBH. Contacto, WhatsApp y reserva para entrenar en The House of Champions.",
+      "Empieza en BBH. Contacto, WhatsApp y reserva para entrenar en La Casa de los Campeones.",
     path: "/contacto",
   },
 } as const;

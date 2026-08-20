@@ -29,11 +29,11 @@ export function Header() {
         <Link href="/" className="flex items-baseline gap-3">
           <span className="font-display text-2xl font-bold tracking-[0.14em]">BBH</span>
           <span className="hidden font-display text-[10px] tracking-[0.22em] text-bbh-off/70 lg:inline">
-            THE HOUSE OF CHAMPIONS
+            LA CASA DE LOS CAMPEONES
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Navegación principal">
           {site.nav.map((item) => {
             const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (

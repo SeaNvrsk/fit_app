@@ -6,15 +6,15 @@ export type NavItem = {
 
 export const site = {
   name: "BBH",
-  legalName: "BBH — The House of Champions",
-  tagline: "THE HOUSE OF CHAMPIONS",
-  locale: "es",
+  legalName: "BBH — Build Beyond Humans",
+  tagline: "LA CASA DE LOS CAMPEONES",
+  locale: "es-MX",
   description:
-    "BBH es un performance club de élite. The House of Champions: los mejores coaches, atletas competitivos y un sistema de entrenamiento para quienes quieren competir y estar entre los mejores.",
+    "BBH es un club de rendimiento de élite. La Casa de los Campeones: los mejores entrenadores, atletas competitivos y un sistema de entrenamiento para quienes quieren competir y estar entre los mejores.",
   contact: {
     city: "[CIUDAD]",
     address: "[DIRECCIÓN]",
-    email: "[EMAIL]",
+    email: "[CORREO]",
     phone: "[TELÉFONO]",
     whatsapp: "[WHATSAPP]",
     whatsappUrl: "",
@@ -25,7 +25,7 @@ export const site = {
     { label: "INICIO", href: "/" },
     { label: "CLASES", href: "/clases" },
     { label: "HORARIO", href: "/horario", event: "nav_horario" },
-    { label: "COACHES", href: "/coaches", event: "nav_coaches" },
+    { label: "ENTRENADORES", href: "/coaches", event: "nav_coaches" },
     { label: "EVENTOS", href: "/eventos" },
     { label: "PERSONALIZADOS", href: "/personalizados" },
     { label: "CONTACTO", href: "/contacto" },
@@ -33,22 +33,16 @@ export const site = {
   mobileNav: [
     { label: "Inicio", href: "/" },
     { label: "Horario", href: "/horario", event: "nav_horario" },
-    { label: "Coaches", href: "/coaches", event: "nav_coaches" },
+    { label: "Entrenadores", href: "/coaches", event: "nav_coaches" },
     { label: "Eventos", href: "/eventos" },
   ] satisfies NavItem[],
   cta: {
-    primary: { label: "TRAIN WITH US", href: "/contacto", event: "train_with_us" },
-    coaches: { label: "MEET OUR COACHES", href: "/coaches", event: "nav_coaches" },
-    reservar: { label: "RESERVAR", href: "/contacto", event: "reservar" },
+    primary: { label: "ENTRENA CON NOSOTROS", href: "/horario#reservar", event: "train_with_us" },
+    coaches: { label: "CONOCE A LOS ENTRENADORES", href: "/coaches", event: "nav_coaches" },
+    reservar: { label: "RESERVAR", href: "/horario#reservar", event: "reservar" },
     whatsapp: { label: "WhatsApp", event: "whatsapp" },
   },
-  pillars: [
-    "ELITE",
-    "COMPETITIVE",
-    "PREMIUM",
-    "PERFORMANCE",
-    "COMMUNITY",
-  ],
+  pillars: ["ÉLITE", "COMPETITIVO", "EXCLUSIVO", "RENDIMIENTO", "COMUNIDAD"],
 } as const;
 
 export function isPlaceholder(value: string) {

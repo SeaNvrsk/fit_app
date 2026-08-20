@@ -8,27 +8,24 @@ export type PersonalizedProgram = {
 export const personalizedPrograms: PersonalizedProgram[] = [
   {
     id: "one-to-one",
-    name: "1:1 PERFORMANCE",
-    summary:
-      "Coaching individual para atletas que necesitan un plan, no una clase más.",
+    name: "RENDIMIENTO 1 A 1",
+    summary: "Entrenamiento individual para atletas que necesitan un plan, no una clase más.",
     points: [
       "Evaluación de rendimiento",
       "Programación semanal",
-      "Ajustes según competición",
+      "Ajustes según la competencia",
     ],
   },
   {
     id: "small-group",
-    name: "SMALL GROUP",
-    summary:
-      "Grupos reducidos con el mismo estándar de la house y más atención al detalle.",
-    points: ["Cupos limitados", "Estándar de movimiento", "Progresión visible"],
+    name: "GRUPO REDUCIDO",
+    summary: "Grupos chicos con el mismo estándar de la casa y más atención al detalle.",
+    points: ["Cupos limitados", "Estándar de movimiento", "Progreso visible"],
   },
   {
     id: "race-strategy",
-    name: "RACE STRATEGY",
-    summary:
-      "Preparación específica para una fecha: HYROX u otra competición híbrida.",
-    points: ["Pacing", "Estaciones", "Plan de carrera"],
+    name: "ESTRATEGIA DE CARRERA",
+    summary: "Preparación específica para una fecha: HYROX u otra competencia híbrida.",
+    points: ["Ritmo", "Estaciones", "Plan de carrera"],
   },
 ];

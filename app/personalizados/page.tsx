@@ -6,6 +6,8 @@ import { site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { FituneEmbed } from "@/components/fitune/FituneEmbed";
+import { fitune } from "@/lib/fitune";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(pagesMeta.personalizados);
@@ -17,7 +19,7 @@ export default function PersonalizadosPage() {
         index="05"
         eyebrow="PERSONALIZADOS"
         title="EL PLAN QUE PIDE EL ATLETA."
-        lead="1:1, small group y race strategy. Para quien ya no cabe en un horario genérico y necesita un estándar más alto."
+        lead="1 a 1, grupo reducido y estrategia de carrera. Para quien ya no cabe en un horario genérico y necesita un estándar más alto."
         image={media.chain}
         imageAlt="Entrenamiento personalizado de élite en BBH"
       />
@@ -44,9 +46,15 @@ export default function PersonalizadosPage() {
           ))}
         </div>
         <div className="mt-12">
-          <Button href={site.cta.primary.href} event={site.cta.primary.event}>
-            {site.cta.primary.label}
-          </Button>
+          {fitune().appointments ? (
+            <div id="reservar" className="scroll-mt-28">
+              <FituneEmbed src={fitune().appointments} title="Reserva personalizada BBH" />
+            </div>
+          ) : (
+            <Button href={site.cta.reservar.href} event={site.cta.reservar.event}>
+              {site.cta.reservar.label}
+            </Button>
+          )}
         </div>
       </Section>
     </>

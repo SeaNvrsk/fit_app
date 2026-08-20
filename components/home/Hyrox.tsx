@@ -24,7 +24,7 @@ export function Hyrox() {
           <p className="mt-6 text-lg leading-relaxed text-bbh-off">{home.hyrox.lead}</p>
           <div className="mt-8">
             <Button href="/clases#hyrox-performance" variant="ghost">
-              HYROX PERFORMANCE
+              RENDIMIENTO HYROX
             </Button>
           </div>
         </Reveal>

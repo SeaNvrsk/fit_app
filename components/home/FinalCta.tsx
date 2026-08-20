@@ -14,7 +14,7 @@ export function FinalCta() {
     <section className="relative min-h-[80svh] overflow-hidden">
       <ParallaxMedia
         src={media.plates}
-        alt="Discos de competición en BBH"
+        alt="Discos de competencia en BBH"
         className="absolute inset-0 min-h-[80svh]"
         sizes="100vw"
       />

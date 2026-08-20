@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { pagesMeta } from "@/content/seo";
 import { media } from "@/content/media";
 import { site, whatsappHref } from "@/content/site";
+import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { TrackedAnchor } from "@/components/ui/TrackedLink";
@@ -16,22 +17,22 @@ export default function ContactoPage() {
       <PageHero
         index="09"
         eyebrow="CONTACTO"
-        title="TRAIN WITH US."
+        title="ENTRENA CON NOSOTROS."
         lead="Si quieres el siguiente nivel, este es el primer paso. Completa el formulario o escribe por WhatsApp."
         image={media.hero}
-        imageAlt="Train with us en The House of Champions"
+        imageAlt="Entrena con nosotros en La Casa de los Campeones"
       />
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <ContactForm />
           <aside className="space-y-8 bg-bbh-graphite p-8">
             <div>
-              <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">HOUSE</p>
+              <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">SEDE</p>
               <p className="mt-3 text-bbh-off">{site.contact.city}</p>
               <p className="text-bbh-off">{site.contact.address}</p>
             </div>
             <div>
-              <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">DIRECTO</p>
+              <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">CONTACTO DIRECTO</p>
               <p className="mt-3 text-bbh-off">{site.contact.email}</p>
               <p className="text-bbh-off">{site.contact.phone}</p>
               <TrackedAnchor
@@ -43,9 +44,11 @@ export default function ContactoPage() {
               </TrackedAnchor>
             </div>
             <p className="text-sm leading-relaxed text-bbh-off/80">
-              El booking online llega en la siguiente etapa. Mientras tanto, TRAIN WITH US y RESERVAR
-              llegan aquí.
+              Para reservar una clase o pagar, usa RESERVAR. Aquí resolvemos dudas de la casa.
             </p>
+            <Button href={site.cta.reservar.href} event={site.cta.reservar.event}>
+              {site.cta.reservar.label}
+            </Button>
           </aside>
         </div>
       </Section>

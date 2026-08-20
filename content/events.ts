@@ -11,32 +11,32 @@ export type EventItem = {
 export const events: EventItem[] = [
   {
     id: "house-time-trial",
-    title: "HOUSE TIME TRIAL",
+    title: "CONTRARRELOJ DE LA CASA",
     dateLabel: "Mensual",
-    kind: "Performance",
+    kind: "Rendimiento",
     summary:
-      "Test interno de la house. Mides tu nivel frente al estándar BBH, no frente a un WOD genérico.",
+      "Prueba interna de la casa. Mides tu nivel frente al estándar BBH, no frente a un entrenamiento genérico.",
     image: "/media/strength/plates.jpg",
-    imageAlt: "Time trial interno de BBH",
+    imageAlt: "Contrarreloj interna de BBH",
   },
   {
     id: "hyrox-simulation",
-    title: "HYROX SIMULATION",
+    title: "SIMULACIÓN HYROX",
     dateLabel: "Según calendario",
     kind: "HYROX",
     summary:
-      "Simulación de carrera: estaciones, transiciones y pacing. Una pieza del sistema, para quienes van a competir.",
+      "Simulación de carrera: estaciones, transiciones y ritmo. Una pieza del sistema, para quienes van a competir.",
     image: "/media/classes/plate.jpg",
     imageAlt: "Simulación HYROX en BBH",
   },
   {
     id: "competition-prep",
-    title: "COMPETITION PREP",
-    dateLabel: "Pre-evento",
-    kind: "Competition",
+    title: "PREPARACIÓN PARA COMPETENCIA",
+    dateLabel: "Antes del evento",
+    kind: "Competencia",
     summary:
-      "Ventana de preparación para atletas con fecha de competición. Estrategia, puntos débiles y estándar de carrera.",
+      "Ventana de preparación para atletas con fecha de competencia. Estrategia, puntos débiles y estándar de carrera.",
     image: "/media/athletes/grip.jpg",
-    imageAlt: "Preparación de competición en BBH",
+    imageAlt: "Preparación de competencia en BBH",
   },
 ];

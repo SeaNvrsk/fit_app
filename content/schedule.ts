@@ -45,4 +45,4 @@ export const scheduleSlots: ScheduleSlot[] = [
 ];
 
 export const scheduleNote =
-  "Horario de demostración. Sustituye estos bloques en content/schedule.ts cuando el calendario real esté listo.";
+  "Horario de demostración. Se actualiza cuando el calendario real esté listo.";

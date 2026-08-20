@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { FituneEmbed } from "@/components/fitune/FituneEmbed";
+import { fitune } from "@/lib/fitune";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(pagesMeta.eventos);
@@ -17,10 +19,10 @@ export default function EventosPage() {
       <PageHero
         index="08"
         eyebrow="EVENTOS"
-        title="LA HOUSE TAMBIÉN COMPITE."
-        lead="Time trials, simulaciones y ventanas de preparación. La comunidad se mide en el suelo, no en un feed."
+        title="LA CASA TAMBIÉN COMPITE."
+        lead="Contrarreloj, simulaciones y ventanas de preparación. La comunidad se mide en el piso, no en una red social."
         image={media.plates}
-        imageAlt="Eventos de competición en BBH"
+        imageAlt="Eventos de competencia en BBH"
       />
       <Section>
         <div className="grid gap-6 lg:grid-cols-3">
@@ -45,9 +47,15 @@ export default function EventosPage() {
           ))}
         </div>
         <div className="mt-12">
-          <Button href="/contacto" event="reservar">
-            {site.cta.reservar.label}
-          </Button>
+          {fitune().events ? (
+            <div id="reservar" className="scroll-mt-28">
+              <FituneEmbed src={fitune().events} title="Reserva de eventos BBH" />
+            </div>
+          ) : (
+            <Button href={site.cta.reservar.href} event="reservar">
+              {site.cta.reservar.label}
+            </Button>
+          )}
         </div>
       </Section>
     </>

@@ -22,7 +22,7 @@ export function ClassesPreview() {
         </Reveal>
         <ParallaxMedia
           src={media.dumbbells}
-          alt="Mancuernas en el floor de entrenamiento BBH"
+          alt="Mancuernas en el piso de entrenamiento BBH"
           className="min-h-[260px] lg:min-h-[340px]"
         />
       </div>

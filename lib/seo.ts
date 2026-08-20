@@ -23,7 +23,7 @@ export function pageMetadata(input: {
       description: input.description,
       url,
       siteName: site.legalName,
-      locale: "es",
+      locale: "es_MX",
       type: "website",
     },
     twitter: {

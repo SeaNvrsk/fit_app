@@ -11,7 +11,7 @@ export function ElitePerformance() {
     <section className="relative min-h-[100svh] overflow-hidden bg-bbh-black">
       <ParallaxMedia
         src={media.chain}
-        alt="Kettlebell y cadena en un entorno de entrenamiento de élite"
+        alt="Pesas rusas y cadena en un entorno de entrenamiento de élite"
         className="absolute inset-0 min-h-[100svh]"
         sizes="100vw"
       />

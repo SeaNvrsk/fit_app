@@ -8,7 +8,7 @@ export default function NotFound() {
       <DisplayTitle as="h1" className="mt-4">
         ESTA PÁGINA NO EXISTE.
       </DisplayTitle>
-      <p className="mt-6 max-w-md text-bbh-off">Vuelve a la house.</p>
+      <p className="mt-6 max-w-md text-bbh-off">Vuelve a la casa.</p>
       <div className="mt-8">
         <Button href="/">INICIO</Button>
       </div>

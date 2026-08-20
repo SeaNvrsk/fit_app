@@ -16,16 +16,16 @@ export default function CoachesPage() {
     <>
       <PageHero
         index="03"
-        eyebrow="THE BEST COACHES"
+        eyebrow="LOS MEJORES ENTRENADORES"
         title="ESPECIALISTAS EN RENDIMIENTO."
-        lead="No están aquí para dirigir entrenamientos. Trabajan para desarrollar atletas capaces de competir al más alto nivel. Los nombres y fotos reales se cargan en content/coaches.ts."
+        lead="No están aquí para dirigir entrenamientos. Trabajan para formar atletas capaces de competir al más alto nivel. Los nombres y fotos reales se publican cuando el equipo esté listo."
         image={media.grip}
-        imageAlt="Coaching de élite en el floor de BBH"
+        imageAlt="Entrenamiento de élite en el piso de BBH"
       />
       <Section>
         <ParallaxMedia
           src={media.rack}
-          alt="Espacio de coaches y performance en BBH"
+          alt="Espacio de entrenadores y rendimiento en BBH"
           className="mb-12 min-h-[320px] md:min-h-[460px]"
         />
         <div className="grid gap-4 md:grid-cols-2">

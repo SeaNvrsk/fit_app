@@ -16,9 +16,9 @@ export default function ClasesPage() {
     <>
       <PageHero
         index="06"
-        eyebrow="TRAINING SYSTEM"
+        eyebrow="SISTEMA DE ENTRENAMIENTO"
         title="SIETE DIRECCIONES. UN ESTÁNDAR."
-        lead="Strength, push, pull, hybrid, engine y HYROX Performance. El sistema existe para crear atletas, no para llenar un horario."
+        lead="Fuerza, empuje, tracción, híbrido, motor y Rendimiento HYROX. El sistema existe para crear atletas, no para llenar un horario."
         image={media.dumbbells}
         imageAlt="Sistema de entrenamiento de BBH"
       />
