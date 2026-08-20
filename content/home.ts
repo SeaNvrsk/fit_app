@@ -1,0 +1,71 @@
+export const home = {
+  hero: {
+    index: "01",
+    kicker: "THE HOUSE OF CHAMPIONS",
+    title: "THE HOUSE OF CHAMPIONS",
+    lines: ["TRAIN WITH THE BEST.", "BECOME THE BEST."],
+    lead: "Un espacio de entrenamiento de élite para atletas que no buscan simplemente estar en forma. Buscan competir, mejorar y estar entre los mejores.",
+    image: "/media/hero/kettlebell.jpg",
+    imageAlt: "Kettlebell bajo luz dramática en The House of Champions",
+  },
+  statement: {
+    index: "02",
+    title: ["NO VENIMOS A SER BUENOS.", "VENIMOS A SER LOS MEJORES."],
+    paragraphs: [
+      "BBH nace de una idea simple: si quieres llegar a la cima, tienes que entrenar con quienes ya conocen el camino.",
+      "Nuestros coaches no están aquí simplemente para dirigir entrenamientos. Son especialistas en rendimiento y trabajan para desarrollar atletas capaces de competir al más alto nivel.",
+      "Aquí entrenan personas que quieren más.",
+    ],
+  },
+  coaches: {
+    index: "03",
+    eyebrow: "THE BEST COACHES",
+    title: "NO DIRIGEN CLASES. PREPARAN ATLETAS.",
+    lead: "El coaching en BBH no es animar una sesión. Es performance: estándar, programación y exigencia para quienes quieren el siguiente nivel.",
+  },
+  athletes: {
+    index: "04",
+    eyebrow: "THE BEST ATHLETES",
+    title: "ENTRENA DONDE SE COMPITE.",
+    lead: "Si te basta con estar en forma, hay muchos otros lugares. Si quieres PRs, podiums y rankings, entrenas junto a gente que también los persigue.",
+    points: ["Atletas competitivos", "PRs y rankings", "Estándar alto cada sesión"],
+    image: "/media/athletes/grip.jpg",
+    imageAlt: "Atleta de BBH en un agarre de élite durante el entrenamiento",
+  },
+  performance: {
+    index: "05",
+    eyebrow: "ELITE PERFORMANCE",
+    title: "UN SISTEMA. NO UN GIMNASIO.",
+    lead: "Fuerza, engine, hybrid training y competición en una sola arquitectura. Cada clase existe para mover el rendimiento, no para llenar un horario.",
+    points: [
+      { label: "STRENGTH", text: "Fuerza que se transfiere a la competición." },
+      { label: "ENGINE", text: "Capacidad para sostener intensidad." },
+      { label: "HYBRID", text: "Fuerza y condición en el mismo atleta." },
+      { label: "COMPETE", text: "El entrenamiento termina en el resultado." },
+    ],
+  },
+  classes: {
+    index: "06",
+    eyebrow: "TRAINING SYSTEM",
+    title: "SIETE DIRECCIONES. UN ESTÁNDAR.",
+    lead: "HYROX Performance es una pieza. El sistema es más amplio: lower, upper, hybrid, engine.",
+  },
+  hyrox: {
+    index: "07",
+    eyebrow: "HYROX",
+    title: "UN PILAR. NO EL ÚNICO SENTIDO.",
+    lead: "BBH entrena HYROX con seriedad: estaciones, transiciones, race craft. Pero la house no existe por una carrera. Existe para crear campeones.",
+    image: "/media/classes/plate.jpg",
+    imageAlt: "Preparación de fuerza e HYROX en el floor de BBH",
+  },
+  community: {
+    index: "08",
+    eyebrow: "COMMUNITY",
+    title: "UNA HOUSE. NO UN CLUB DE FITNESS.",
+    lead: "La comunidad de BBH se construye en el suelo: gente que se exige, que compete y que eleva a quien entrena a su lado.",
+  },
+  finalCta: {
+    title: "SI QUIERES SER EL MEJOR, ENTRENA CON LOS MEJORES.",
+    lead: "BBH no es para quien busca un gimnasio más. Es para quien quiere competir.",
+  },
+} as const;
