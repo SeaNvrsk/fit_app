@@ -1,5 +1,6 @@
 export const media = {
   hero: "/media/hero/kettlebell.jpg",
+  heroMobile: "/media/hero/kettlebell-mobile.jpg",
   chain: "/media/performance/chain.jpg",
   grip: "/media/athletes/grip.jpg",
   rack: "/media/coaches/rack.jpg",

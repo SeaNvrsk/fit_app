@@ -9,13 +9,11 @@ const DEFAULT_STOREFRONT = "https://www.bbhperformance.com";
  * Home `/` · Schedule `/activities` · Events `/events`
  * Appointments `/appointments` (BBH renamed this tab Personalizados) · Pricing `/pricing`
  *
- * Paths like `/horario` or `/eventos` are not Fitune tabs — the app 404s.
- * `embed=true` is widget chrome (Preferencias → Embed).
+ * `/embed/{tab}` loads Fitune's widget layout instead of the full storefront
+ * (the `/activities` site chrome is what made Horario look like a site-in-site).
  */
-function fituneWidget(base: string, path: string) {
-  const url = new URL(path, `${base}/`);
-  url.searchParams.set("embed", "true");
-  return url.toString();
+function fituneWidget(base: string, tab: string) {
+  return `${base}/embed/${tab.replace(/^\//, "")}`;
 }
 
 export function fitune() {
@@ -24,10 +22,10 @@ export function fitune() {
 
   return {
     storefront: base,
-    schedule: env("NEXT_PUBLIC_FITUNE_EMBED_SCHEDULE") || fituneWidget(base, "/activities"),
-    appointments: env("NEXT_PUBLIC_FITUNE_EMBED_APPOINTMENTS") || fituneWidget(base, "/appointments"),
-    events: env("NEXT_PUBLIC_FITUNE_EMBED_EVENTS") || fituneWidget(base, "/events"),
-    memberships: env("NEXT_PUBLIC_FITUNE_EMBED_MEMBERSHIPS") || fituneWidget(base, "/pricing"),
+    schedule: env("NEXT_PUBLIC_FITUNE_EMBED_SCHEDULE") || fituneWidget(base, "activities"),
+    appointments: env("NEXT_PUBLIC_FITUNE_EMBED_APPOINTMENTS") || fituneWidget(base, "appointments"),
+    events: env("NEXT_PUBLIC_FITUNE_EMBED_EVENTS") || fituneWidget(base, "events"),
+    memberships: env("NEXT_PUBLIC_FITUNE_EMBED_MEMBERSHIPS") || fituneWidget(base, "pricing"),
   };
 }
 
@@ -37,4 +35,12 @@ export function isFituneReady() {
 
 export function bookHref() {
   return "/horario#reservar";
+}
+
+export function fituneOrigin(src: string) {
+  try {
+    return new URL(src).origin;
+  } catch {
+    return DEFAULT_STOREFRONT;
+  }
 }

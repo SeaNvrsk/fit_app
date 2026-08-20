@@ -12,6 +12,8 @@ type Props = {
   sizes?: string;
   priority?: boolean;
   overlay?: boolean;
+  objectClassName?: string;
+  intensity?: "default" | "subtle";
 };
 
 export function ParallaxMedia({
@@ -21,6 +23,8 @@ export function ParallaxMedia({
   sizes = "(min-width: 1024px) 70vw, 100vw",
   priority,
   overlay = true,
+  objectClassName = "object-cover",
+  intensity = "default",
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -28,12 +32,15 @@ export function ParallaxMedia({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["-16%", "16%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : [1.2, 1.05]);
+  const travel = intensity === "subtle" ? (["-8%", "8%"] as const) : (["-16%", "16%"] as const);
+  const zoom = intensity === "subtle" ? ([1.08, 1.02] as const) : ([1.2, 1.05] as const);
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : travel);
+  const scale = useTransform(scrollYProgress, [0, 1], reduce ? [1, 1] : zoom);
+  const inset = intensity === "subtle" ? "absolute -inset-[8%] will-change-transform" : "absolute -inset-[18%] will-change-transform";
 
   return (
     <div ref={ref} className={cx("relative overflow-hidden bg-bbh-graphite", className)}>
-      <motion.div style={{ y, scale }} className="absolute -inset-[18%] will-change-transform">
+      <motion.div style={{ y, scale }} className={inset}>
         <Image
           src={src}
           alt={alt}
@@ -41,7 +48,7 @@ export function ParallaxMedia({
           priority={priority}
           quality={75}
           sizes={sizes}
-          className="object-cover"
+          className={objectClassName}
         />
       </motion.div>
       {overlay ? (
