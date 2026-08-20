@@ -27,18 +27,18 @@ export function CoachesPreview() {
         />
       </div>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {coaches.map((coach, index) => (
-          <Reveal key={coach.id} delay={index * 0.06}>
-            <article className="border border-white/8 bg-bbh-black p-5">
+      <Reveal>
+        <div className="mt-12 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {coaches.map((coach, index) => (
+            <article key={coach.id} className="flex h-full flex-col border border-white/8 bg-bbh-black p-5">
               <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">0{index + 1}</p>
               <p className="mt-4 font-display text-lg font-bold tracking-[0.08em]">{coach.name}</p>
-              <p className="mt-1 text-sm text-bbh-gold">{coach.role}</p>
-              <p className="mt-3 text-sm text-bbh-off">{coach.focus}</p>
+              <p className="mt-1 min-h-[2.75rem] text-sm leading-snug text-bbh-gold">{coach.role}</p>
+              <p className="mt-3 min-h-[2.75rem] text-sm leading-snug text-bbh-off">{coach.focus}</p>
             </article>
-          </Reveal>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Reveal>
 
       <div className="mt-10">
         <Button href={site.cta.coaches.href} variant="ghost">
