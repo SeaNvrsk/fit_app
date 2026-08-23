@@ -10,8 +10,8 @@ type Props = {
 };
 
 const DEFAULT_HEIGHT = 960;
-/** Fitune embed header is `h-16` plus shadow. */
-const HEADER_OFFSET = 72;
+/** Fitune storefront header is `h-16`. Keep the back-row title ("Choose an option") visible. */
+const HEADER_OFFSET = 64;
 /** Extra space so checkout "Next" / pay actions are not flush with the clip edge. */
 const CTA_BUFFER = 56;
 

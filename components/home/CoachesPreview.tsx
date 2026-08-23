@@ -29,7 +29,7 @@ export function CoachesPreview() {
       </div>
 
       <Reveal>
-        <div className="mt-12 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className={`mt-12 grid items-stretch gap-4 md:grid-cols-2 ${coaches.length > 2 ? "lg:grid-cols-4" : ""}`}>
           {coaches.map((coach, index) => (
             <article key={coach.id} className="flex h-full flex-col overflow-hidden border border-white/8 bg-bbh-black">
               <div className="relative aspect-[3/4] overflow-hidden bg-bbh-graphite">

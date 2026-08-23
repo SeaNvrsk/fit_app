@@ -27,6 +27,7 @@ export const coaches: Coach[] = [
     image: "/media/coaches/aldo-marquez.jpg",
     imageAlt: "Aldo Márquez, atleta y coach de HYROX y entrenamiento híbrido en BBH",
   },
+  /*
   {
     id: "coach-03",
     name: "ENTRENADOR 03",
@@ -45,4 +46,5 @@ export const coaches: Coach[] = [
     image: "",
     imageAlt: "Espacio reservado para la foto del entrenador de motor de BBH",
   },
+  */
 ];
