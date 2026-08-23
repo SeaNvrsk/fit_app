@@ -54,19 +54,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-14 flex max-w-[1280px] flex-col gap-3 border-t border-white/8 pt-6 text-xs text-bbh-off/60 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto mt-14 flex max-w-[1280px] flex-col gap-3 border-t border-white/8 pt-6 text-xs text-bbh-off/60 md:flex-row md:justify-between">
         <p>© {new Date().getFullYear()} BBH. Build Beyond Humans.</p>
-        <p>
-          Sitio por{" "}
-          <a
-            href="https://instagram.com/an_cdmx"
-            target="_blank"
-            rel="noreferrer"
-            className="text-bbh-off hover:text-bbh-gold"
-          >
-            Anatolii Krasnikov · an_cdmx
-          </a>
-        </p>
         <p>ÉLITE · COMPETITIVO · EXCLUSIVO · RENDIMIENTO · COMUNIDAD</p>
       </div>
     </footer>

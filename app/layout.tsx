@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   authors: [{ name: "Anatolii Krasnikov", url: "https://instagram.com/an_cdmx" }],
   creator: "Anatolii Krasnikov",
+  other: {
+    designer: "Anatolii Krasnikov · an_cdmx",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
