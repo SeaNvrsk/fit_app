@@ -46,8 +46,8 @@ function HeroEnglishOverlay({
       aria-hidden
       className={
         compact
-          ? "font-display text-[9.5vw] font-bold uppercase leading-[0.78] sm:text-4xl"
-          : "font-display text-[clamp(2.5rem,5.2vw,5.5rem)] font-bold uppercase leading-[0.76]"
+          ? "font-display text-[7.2vw] font-bold uppercase leading-[0.74] sm:text-3xl"
+          : "font-display text-[clamp(2.25rem,4.8vw,5rem)] font-bold uppercase leading-[0.76]"
       }
     >
       <div className="flex flex-col drop-shadow-[0_2px_28px_rgba(0,0,0,0.9)]">
@@ -139,7 +139,7 @@ function MobileHeroVisual({ onSequenceComplete }: { onSequenceComplete?: () => v
 
   return (
     <div className="relative mx-5 mt-20 overflow-hidden border border-white/10">
-      <div className="relative aspect-[4/5] min-h-[58svh]">
+      <div className="relative aspect-[4/5] min-h-[58svh] overflow-hidden">
         <motion.div
           className="absolute -inset-[4%]"
           initial={reduce ? false : { scale: 1.02 }}
@@ -158,11 +158,38 @@ function MobileHeroVisual({ onSequenceComplete }: { onSequenceComplete?: () => v
         </motion.div>
         <HeroAtmosphere />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(10,10,10,0.55)_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-[42%] z-10 flex -translate-y-1/2 justify-center px-4">
-          <HeroEnglishOverlay compact onSequenceComplete={onSequenceComplete} />
-        </div>
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bbh-black to-transparent" />
         <div className="pointer-events-none absolute left-0 top-0 h-full w-px bg-bbh-gold/50" />
+        <div className="pointer-events-none absolute inset-0 z-10">
+          <div className="absolute left-1/2 top-[62%] max-w-[88%] -translate-x-1/2 -translate-y-1/2 px-2 text-center">
+            <HeroEnglishOverlay compact onSequenceComplete={onSequenceComplete} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DesktopHeroImage() {
+  return (
+    <div className="relative min-h-[100svh] overflow-hidden">
+      <ParallaxMedia
+        src={media.hero}
+        alt={home.hero.imageAlt}
+        priority
+        intensity="subtle"
+        objectClassName="object-cover object-[78%_center]"
+        className="absolute inset-0 min-h-[100svh]"
+        sizes="100vw"
+        overlay={false}
+      />
+      <HeroAtmosphere />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.88)_0%,rgba(10,10,10,0.55)_46%,rgba(10,10,10,0.18)_100%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bbh-black to-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-10">
+        <div className="absolute inset-y-0 left-0 flex w-[44%] max-w-[34rem] items-center pl-10 lg:w-[42%] lg:pl-16">
+          <HeroEnglishOverlay />
+        </div>
       </div>
     </div>
   );
@@ -180,24 +207,12 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative hidden min-h-[100svh] md:block">
-        <ParallaxMedia
-          src={media.hero}
-          alt={home.hero.imageAlt}
-          priority
-          intensity="subtle"
-          objectClassName="object-cover object-[78%_center]"
-          className="absolute inset-0 min-h-[100svh]"
-          sizes="100vw"
-        />
-        <HeroAtmosphere />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.88)_0%,rgba(10,10,10,0.55)_46%,rgba(10,10,10,0.18)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bbh-black to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex w-[44%] items-center pl-10 lg:w-[42%] lg:pl-16">
-          <HeroEnglishOverlay />
-        </div>
-        <div className="relative z-20 mx-auto flex min-h-[100svh] max-w-[1440px] items-center px-10 pb-16 pt-28 lg:px-16">
-          <HeroCopy />
+      <div className="relative hidden md:block">
+        <DesktopHeroImage />
+        <div className="pointer-events-none absolute inset-0 z-20 mx-auto flex min-h-[100svh] max-w-[1440px] items-center px-10 pb-16 pt-28 lg:px-16">
+          <div className="pointer-events-auto">
+            <HeroCopy />
+          </div>
         </div>
       </div>
     </section>
