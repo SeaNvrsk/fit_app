@@ -6,6 +6,9 @@
 # local toolchain
 /.tools
 
+# local screenshots and scratch files
+/.tmp
+
 # dependencies
 /node_modules
 /.pnp

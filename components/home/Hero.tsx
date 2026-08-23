@@ -184,11 +184,13 @@ function DesktopHeroImage() {
         overlay={false}
       />
       <HeroAtmosphere />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.88)_0%,rgba(10,10,10,0.55)_46%,rgba(10,10,10,0.18)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.72)_0%,rgba(10,10,10,0.4)_46%,rgba(10,10,10,0.12)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bbh-black to-transparent" />
-      <div className="pointer-events-none absolute inset-0 z-10">
-        <div className="absolute inset-y-0 left-0 flex w-[44%] max-w-[34rem] items-center pl-10 lg:w-[42%] lg:pl-16">
-          <HeroEnglishOverlay />
+      <div className="pointer-events-none absolute inset-0 z-10 flex items-center">
+        <div className="mx-auto w-full max-w-[1440px] px-10 lg:px-16">
+          <div className="w-[42%] max-w-[30rem]">
+            <HeroEnglishOverlay />
+          </div>
         </div>
       </div>
     </div>
@@ -207,12 +209,10 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative hidden md:block">
+      <div className="hidden md:block">
         <DesktopHeroImage />
-        <div className="pointer-events-none absolute inset-0 z-20 mx-auto flex min-h-[100svh] max-w-[1440px] items-center px-10 pb-16 pt-28 lg:px-16">
-          <div className="pointer-events-auto">
-            <HeroCopy />
-          </div>
+        <div className="mx-auto max-w-[1440px] px-10 pb-24 pt-20 lg:px-16">
+          <HeroCopy />
         </div>
       </div>
     </section>
