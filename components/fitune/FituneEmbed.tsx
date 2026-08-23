@@ -12,8 +12,8 @@ type Props = {
 const DEFAULT_HEIGHT = 960;
 /** Fitune embed header is `h-16` plus shadow. */
 const HEADER_OFFSET = 72;
-/** Powered-by footer plus Fitune's sticky mobile tabs (~100px in their height ping). */
-const FOOTER_OFFSET = 104;
+/** Extra space so checkout "Next" / pay actions are not flush with the clip edge. */
+const CTA_BUFFER = 56;
 
 export function FituneEmbed({ src, title, minHeight = "960px" }: Props) {
   const floor = useMemo(() => {
@@ -28,7 +28,7 @@ export function FituneEmbed({ src, title, minHeight = "960px" }: Props) {
       if (event.origin !== origin) return;
       const data = event.data;
       if (!data || data.type !== "setIframeHeight" || typeof data.height !== "number") return;
-      setHeight(Math.max(data.height, floor));
+      setHeight(Math.max(data.height + CTA_BUFFER, floor));
     }
 
     window.addEventListener("message", onMessage);
@@ -36,8 +36,7 @@ export function FituneEmbed({ src, title, minHeight = "960px" }: Props) {
   }, [floor, origin]);
 
   const frameHeight = height;
-  const chrome = HEADER_OFFSET + FOOTER_OFFSET;
-  const viewportHeight = Math.max(frameHeight - chrome, floor - chrome);
+  const viewportHeight = Math.max(frameHeight - HEADER_OFFSET, floor - HEADER_OFFSET);
 
   return (
     <div>
