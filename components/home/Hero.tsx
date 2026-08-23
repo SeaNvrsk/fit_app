@@ -8,32 +8,33 @@ import { site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { HeroAtmosphere } from "@/components/motion/HeroAtmosphere";
 import { ParallaxMedia } from "@/components/motion/ParallaxMedia";
+import { Reveal } from "@/components/motion/Reveal";
 
 const STAGGER = 0.28;
-const STAGGER_START = 0.2;
+const STAGGER_START = 0.35;
 
-function HeroTitleStagger({ compact = false }: { compact?: boolean }) {
+function HeroEnglishOverlay({ compact = false }: { compact?: boolean }) {
   const reduce = useReducedMotion();
   const words = home.hero.englishWords;
 
   return (
-    <h1
+    <div
+      aria-hidden
       className={
         compact
-          ? "mt-6 font-display text-[14vw] font-bold uppercase leading-[0.82] sm:text-6xl"
-          : "mt-6 font-display text-[clamp(3.4rem,7.2vw,7.4rem)] font-bold uppercase leading-[0.8]"
+          ? "font-display text-[11vw] font-bold uppercase leading-[0.78] sm:text-5xl"
+          : "font-display text-[clamp(2.75rem,5.8vw,6rem)] font-bold uppercase leading-[0.76]"
       }
     >
-      <span className="sr-only">{home.hero.title}</span>
-      <span aria-hidden className="flex flex-col">
+      <div className="flex flex-col drop-shadow-[0_2px_24px_rgba(0,0,0,0.85)]">
         {words.map((word, index) => (
           <motion.span
             key={`${word}-${index}`}
-            className={index === words.length - 1 ? "text-bbh-gold" : "text-white"}
-            initial={reduce ? false : { opacity: 0, y: 28 }}
+            className={index === words.length - 1 ? "text-bbh-gold" : "text-white/95"}
+            initial={reduce ? false : { opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.7,
+              duration: 0.75,
               delay: reduce ? 0 : STAGGER_START + index * STAGGER,
               ease: [0.22, 1, 0.36, 1],
             }}
@@ -41,62 +42,43 @@ function HeroTitleStagger({ compact = false }: { compact?: boolean }) {
             {word}
           </motion.span>
         ))}
-      </span>
-    </h1>
+      </div>
+    </div>
   );
 }
 
-function HeroCopy({ variant = "full" }: { variant?: "full" | "poster" }) {
-  const reduce = useReducedMotion();
-  const poster = variant === "poster";
-  const afterTitle = STAGGER_START + home.hero.englishWords.length * STAGGER;
-
+function HeroCopy() {
   return (
-    <div className={poster ? "w-full max-w-[36rem]" : "max-w-3xl"}>
-      <motion.p
-        className="font-display text-[11px] tracking-[0.32em] text-bbh-gold"
-        initial={reduce ? false : { opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
+    <Reveal className="max-w-3xl">
+      <p className="font-display text-[11px] tracking-[0.32em] text-bbh-gold">
         01 — {home.hero.kicker}
-      </motion.p>
-      {poster ? null : (
-        <p className="mt-5 font-display text-[11px] tracking-[0.28em] text-bbh-off/70">
-          {site.pillars.join(" · ")}
-        </p>
-      )}
-      <HeroTitleStagger compact={!poster} />
-      <motion.div
-        initial={reduce ? false : { opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: reduce ? 0 : afterTitle, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <div className="mt-6 space-y-1">
-          {home.hero.lines.map((line) => (
-            <p
-              key={line}
-              className={`font-display font-semibold uppercase tracking-[0.08em] text-bbh-gold ${
-                poster ? "text-lg md:text-xl" : "text-xl md:text-3xl"
-              }`}
-            >
-              {line}
-            </p>
-          ))}
-        </div>
-        {poster ? null : (
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-bbh-off md:text-lg">{home.hero.lead}</p>
-        )}
-        <div className={`flex flex-col gap-3 sm:flex-row ${poster ? "mt-8" : "mt-10"}`}>
-          <Button href={site.cta.primary.href} event={site.cta.primary.event}>
-            {site.cta.primary.label}
-          </Button>
-          <Button href={site.cta.coaches.href} variant="ghost" event={site.cta.coaches.event}>
-            {site.cta.coaches.label}
-          </Button>
-        </div>
-      </motion.div>
-    </div>
+      </p>
+      <p className="mt-5 font-display text-[11px] tracking-[0.28em] text-bbh-off/70">
+        {site.pillars.join(" · ")}
+      </p>
+      <h1 className="mt-6 font-display text-[12vw] font-bold uppercase leading-[0.86] sm:text-7xl md:text-8xl lg:text-[6.6rem]">
+        {home.hero.title}
+      </h1>
+      <div className="mt-6 space-y-1">
+        {home.hero.lines.map((line) => (
+          <p
+            key={line}
+            className="font-display text-xl font-semibold uppercase tracking-[0.08em] text-bbh-gold md:text-3xl"
+          >
+            {line}
+          </p>
+        ))}
+      </div>
+      <p className="mt-8 max-w-xl text-base leading-relaxed text-bbh-off md:text-lg">{home.hero.lead}</p>
+      <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        <Button href={site.cta.primary.href} event={site.cta.primary.event}>
+          {site.cta.primary.label}
+        </Button>
+        <Button href={site.cta.coaches.href} variant="ghost" event={site.cta.coaches.event}>
+          {site.cta.coaches.label}
+        </Button>
+      </div>
+    </Reveal>
   );
 }
 
@@ -124,6 +106,9 @@ function MobileHeroVisual() {
         </motion.div>
         <HeroAtmosphere />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(10,10,10,0.55)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6">
+          <HeroEnglishOverlay compact />
+        </div>
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-bbh-black to-transparent" />
         <div className="pointer-events-none absolute left-0 top-0 h-full w-px bg-bbh-gold/50" />
       </div>
@@ -154,10 +139,11 @@ export function Hero() {
         <HeroAtmosphere />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,10,10,0.88)_0%,rgba(10,10,10,0.55)_46%,rgba(10,10,10,0.18)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bbh-black to-transparent" />
-        <div className="relative mx-auto flex min-h-[100svh] max-w-[1440px] items-center px-10 pb-16 pt-28 lg:px-16">
-          <div className="w-full md:w-1/2 lg:w-[48%]">
-            <HeroCopy variant="poster" />
-          </div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 flex w-[58%] items-center justify-center px-8 lg:w-[55%] lg:px-14">
+          <HeroEnglishOverlay />
+        </div>
+        <div className="relative z-20 mx-auto flex min-h-[100svh] max-w-[1440px] items-center px-10 pb-16 pt-28 lg:px-16">
+          <HeroCopy />
         </div>
       </div>
     </section>
