@@ -3,6 +3,8 @@ export const home = {
     index: "01",
     kicker: "LA CASA DE LOS CAMPEONES",
     title: "LA CASA DE LOS CAMPEONES",
+    englishTitle: "THE HOUSE OF THE CHAMPIONS",
+    englishWords: ["THE", "HOUSE", "OF", "THE", "CHAMPIONS"],
     lines: ["ENTRENA CON LOS MEJORES.", "CONVIÉRTETE EN EL MEJOR."],
     lead: "Un espacio de entrenamiento de élite para atletas que no buscan solamente estar en forma. Buscan competir, mejorar y estar entre los mejores.",
     image: "/media/hero/kettlebell.jpg",
