@@ -45,10 +45,10 @@ export function localBusinessJsonLd() {
     slogan: site.tagline,
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${site.contact.address}, ${site.contact.floor}`,
-      addressLocality: "Tlalnepantla de Baz",
+      streetAddress: `${site.contact.street}, ${site.contact.floor}`,
+      addressLocality: site.contact.city,
       addressRegion: "México",
-      postalCode: "54026",
+      postalCode: site.contact.postalCode,
       addressCountry: "MX",
     },
     email: isPlaceholder(site.contact.email) ? undefined : site.contact.email,

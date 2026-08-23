@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { isPlaceholder, site, whatsappHref } from "@/content/site";
+import { addressLines, isPlaceholder, mapsHref, site, whatsappHref } from "@/content/site";
 import { TrackedAnchor } from "@/components/ui/TrackedLink";
 
 export function Footer() {
@@ -35,9 +35,14 @@ export function Footer() {
         <div>
           <p className="font-display text-[11px] tracking-[0.22em] text-bbh-gold">CONTACTO</p>
           <ul className="mt-4 space-y-2 text-sm text-bbh-off">
-            <li>{site.contact.address}</li>
-            <li>{site.contact.floor}</li>
-            <li>{site.contact.city}</li>
+            {addressLines().map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+            <li>
+              <a href={mapsHref()} target="_blank" rel="noreferrer" className="hover:text-bbh-gold">
+                Ver en Maps
+              </a>
+            </li>
             <li>
               <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="hover:text-bbh-gold">
                 {site.contact.phone}

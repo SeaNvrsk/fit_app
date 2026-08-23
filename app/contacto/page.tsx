@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { pagesMeta } from "@/content/seo";
 import { media } from "@/content/media";
-import { site, whatsappHref } from "@/content/site";
+import { addressLines, mapsEmbedSrc, mapsHref, site, whatsappHref } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -28,9 +28,29 @@ export default function ContactoPage() {
           <aside className="space-y-8 bg-bbh-graphite p-8">
             <div>
               <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">SEDE</p>
-              <p className="mt-3 text-bbh-off">{site.contact.address}</p>
-              <p className="text-bbh-off">{site.contact.floor}</p>
-              <p className="text-bbh-off">{site.contact.city}</p>
+              <div className="mt-4 overflow-hidden border border-white/10">
+                <iframe
+                  title="Sede BBH en Google Maps"
+                  src={mapsEmbedSrc()}
+                  className="h-48 w-full border-0 grayscale contrast-125"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+              <address className="mt-4 not-italic text-bbh-off">
+                {addressLines().map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </address>
+              <a
+                href={mapsHref()}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-block font-display text-[11px] tracking-[0.18em] text-bbh-gold hover:underline"
+              >
+                VER EN MAPS
+              </a>
             </div>
             <div>
               <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">CONTACTO DIRECTO</p>

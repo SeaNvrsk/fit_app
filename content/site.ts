@@ -12,9 +12,12 @@ export const site = {
   description:
     "BBH es un club de rendimiento de élite. La Casa de los Campeones: los mejores entrenadores, atletas competitivos y un sistema de entrenamiento para quienes quieren competir y estar entre los mejores.",
   contact: {
-    city: "Tlalnepantla de Baz, Méx.",
-    address: "Calzada de los Jinetes 35, Las Arboledas, 54026",
+    street: "Calzada de los Jinetes 35",
     floor: "1er piso",
+    colony: "Las Arboledas",
+    postalCode: "54026",
+    city: "Tlalnepantla de Baz",
+    state: "Méx.",
     email: "[CORREO]",
     phone: "+52 56 19915404",
     whatsapp: "+52 56 19915404",
@@ -55,4 +58,28 @@ export function whatsappHref() {
   const digits = site.contact.whatsapp.replace(/\D/g, "");
   if (!digits || isPlaceholder(site.contact.whatsapp)) return "/contacto";
   return `https://wa.me/${digits}`;
+}
+
+export function addressLines() {
+  const { street, floor, colony, city, state, postalCode } = site.contact;
+  return [`${street}, ${floor}`, `Col. ${colony}`, `${city}, ${state} C.P. ${postalCode}`];
+}
+
+export function mapsQuery() {
+  const { street, colony, city, postalCode } = site.contact;
+  return `${street}, ${colony}, ${city}, ${postalCode}, México`;
+}
+
+export function mapsHref() {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery())}`;
+}
+
+export function mapsEmbedSrc() {
+  const params = new URLSearchParams({
+    q: mapsQuery(),
+    hl: "es-419",
+    z: "17",
+    output: "embed",
+  });
+  return `https://maps.google.com/maps?${params.toString()}`;
 }
