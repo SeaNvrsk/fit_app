@@ -28,13 +28,15 @@ export default function ContactoPage() {
           <aside className="space-y-8 bg-bbh-graphite p-8">
             <div>
               <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">SEDE</p>
-              <p className="mt-3 text-bbh-off">{site.contact.city}</p>
-              <p className="text-bbh-off">{site.contact.address}</p>
+              <p className="mt-3 text-bbh-off">{site.contact.address}</p>
+              <p className="text-bbh-off">{site.contact.floor}</p>
+              <p className="text-bbh-off">{site.contact.city}</p>
             </div>
             <div>
               <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">CONTACTO DIRECTO</p>
-              <p className="mt-3 text-bbh-off">{site.contact.email}</p>
-              <p className="text-bbh-off">{site.contact.phone}</p>
+              <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="mt-3 block text-bbh-off hover:text-white">
+                {site.contact.phone}
+              </a>
               <TrackedAnchor
                 href={whatsappHref()}
                 event="whatsapp"

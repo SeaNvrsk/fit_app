@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { coaches } from "@/content/coaches";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
@@ -30,11 +31,24 @@ export function CoachesPreview() {
       <Reveal>
         <div className="mt-12 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-4">
           {coaches.map((coach, index) => (
-            <article key={coach.id} className="flex h-full flex-col border border-white/8 bg-bbh-black p-5">
-              <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">0{index + 1}</p>
-              <p className="mt-4 font-display text-lg font-bold tracking-[0.08em]">{coach.name}</p>
-              <p className="mt-1 min-h-[2.75rem] text-sm leading-snug text-bbh-gold">{coach.role}</p>
-              <p className="mt-3 min-h-[2.75rem] text-sm leading-snug text-bbh-off">{coach.focus}</p>
+            <article key={coach.id} className="flex h-full flex-col overflow-hidden border border-white/8 bg-bbh-black">
+              <div className="relative aspect-[3/4] overflow-hidden bg-bbh-graphite">
+                {coach.image ? (
+                  <Image
+                    src={coach.image}
+                    alt={coach.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    className="object-cover object-[center_18%]"
+                  />
+                ) : null}
+              </div>
+              <div className="flex flex-1 flex-col p-5">
+                <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">0{index + 1}</p>
+                <p className="mt-4 font-display text-lg font-bold tracking-[0.08em]">{coach.name}</p>
+                <p className="mt-1 min-h-[2.75rem] text-sm leading-snug text-bbh-gold">{coach.role}</p>
+                <p className="mt-3 min-h-[2.75rem] text-sm leading-snug text-bbh-off">{coach.focus}</p>
+              </div>
             </article>
           ))}
         </div>

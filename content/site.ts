@@ -12,11 +12,12 @@ export const site = {
   description:
     "BBH es un club de rendimiento de élite. La Casa de los Campeones: los mejores entrenadores, atletas competitivos y un sistema de entrenamiento para quienes quieren competir y estar entre los mejores.",
   contact: {
-    city: "[CIUDAD]",
-    address: "[DIRECCIÓN]",
+    city: "Tlalnepantla de Baz, Méx.",
+    address: "Calzada de los Jinetes 35, Las Arboledas, 54026",
+    floor: "1er piso",
     email: "[CORREO]",
-    phone: "[TELÉFONO]",
-    whatsapp: "[WHATSAPP]",
+    phone: "+52 56 19915404",
+    whatsapp: "+52 56 19915404",
     whatsappUrl: "",
     instagram: "[INSTAGRAM]",
     instagramUrl: "",

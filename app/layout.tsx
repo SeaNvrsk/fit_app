@@ -37,12 +37,15 @@ export const metadata: Metadata = {
     "La Casa de los Campeones",
   ],
   robots: { index: true, follow: true },
+  authors: [{ name: "Anatolii Krasnikov", url: "https://instagram.com/an_cdmx" }],
+  creator: "Anatolii Krasnikov",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={site.locale} className={`${oswald.variable} ${geist.variable}`}>
       <body className="bg-bbh-black font-body text-bbh-white antialiased">
+        {/* Sitio desarrollado por Anatolii Krasnikov · an_cdmx */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}

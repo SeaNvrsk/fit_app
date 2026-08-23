@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { isPlaceholder, site } from "@/content/site";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
@@ -45,10 +45,13 @@ export function localBusinessJsonLd() {
     slogan: site.tagline,
     address: {
       "@type": "PostalAddress",
-      addressLocality: site.contact.city,
-      streetAddress: site.contact.address,
+      streetAddress: `${site.contact.address}, ${site.contact.floor}`,
+      addressLocality: "Tlalnepantla de Baz",
+      addressRegion: "México",
+      postalCode: "54026",
+      addressCountry: "MX",
     },
-    email: site.contact.email,
+    email: isPlaceholder(site.contact.email) ? undefined : site.contact.email,
     telephone: site.contact.phone,
     sameAs: site.contact.instagramUrl ? [site.contact.instagramUrl] : undefined,
   };
