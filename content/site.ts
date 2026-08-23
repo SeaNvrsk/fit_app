@@ -20,7 +20,7 @@ export const site = {
     state: "Méx.",
     email: "[CORREO]",
     phone: "+52 56 19915404",
-    whatsapp: "+52 56 19915404",
+    whatsapp: "+52 221 620 8661",
     whatsappUrl: "",
     instagram: "[INSTAGRAM]",
     instagramUrl: "",
