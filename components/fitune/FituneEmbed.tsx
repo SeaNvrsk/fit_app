@@ -62,12 +62,3 @@ export function FituneEmbed({ src, title, minHeight = "960px" }: Props) {
     </div>
   );
 }
-
-export function FitunePending({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="border border-bbh-gold/35 bg-bbh-graphite p-8">
-      <p className="font-display text-sm tracking-[0.18em] text-bbh-gold">FITUNE</p>
-      <p className="mt-4 max-w-xl text-bbh-off">{children}</p>
-    </div>
-  );
-}

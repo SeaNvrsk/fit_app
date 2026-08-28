@@ -2,7 +2,7 @@
 
 import { home } from "@/content/home";
 import { media } from "@/content/media";
-import { DisplayTitle, Eyebrow, Section, SectionIndex } from "@/components/ui/Section";
+import { DisplayTitle, Eyebrow, Section } from "@/components/ui/Section";
 import { ParallaxMedia } from "@/components/motion/ParallaxMedia";
 import { GoldRule, Reveal } from "@/components/motion/Reveal";
 
@@ -11,7 +11,6 @@ export function Athletes() {
     <Section>
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
-          <SectionIndex>{home.athletes.index}</SectionIndex>
           <Eyebrow>{home.athletes.eyebrow}</Eyebrow>
           <DisplayTitle className="mt-4">{home.athletes.title}</DisplayTitle>
           <GoldRule className="mt-8 max-w-xs" />

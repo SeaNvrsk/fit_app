@@ -16,7 +16,6 @@ export default function PersonalizadosPage() {
   return (
     <>
       <PageHero
-        index="05"
         eyebrow="PERSONALIZADOS"
         title="EL PLAN QUE PIDE EL ATLETA."
         lead="1 a 1, grupo reducido y estrategia de carrera. Para quien ya no cabe en un horario genérico y necesita un estándar más alto."
@@ -25,12 +24,9 @@ export default function PersonalizadosPage() {
       />
       <Section>
         <div className="grid gap-4 lg:grid-cols-3">
-          {personalizedPrograms.map((program, index) => (
+          {personalizedPrograms.map((program) => (
             <article key={program.id} className="border border-white/8 bg-bbh-graphite p-8">
-              <p className="font-display text-[11px] tracking-[0.22em] text-bbh-gold">
-                0{index + 1}
-              </p>
-              <h2 className="mt-4 font-display text-3xl font-bold tracking-[0.08em]">
+              <h2 className="font-display text-3xl font-bold tracking-[0.08em]">
                 {program.name}
               </h2>
               <p className="mt-4 text-bbh-off">{program.summary}</p>

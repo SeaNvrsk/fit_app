@@ -5,7 +5,7 @@ import { classes } from "@/content/classes";
 import { home } from "@/content/home";
 import { media } from "@/content/media";
 import { Button } from "@/components/ui/Button";
-import { DisplayTitle, Eyebrow, Section, SectionIndex } from "@/components/ui/Section";
+import { DisplayTitle, Eyebrow, Section } from "@/components/ui/Section";
 import { ParallaxMedia } from "@/components/motion/ParallaxMedia";
 import { GoldRule, Reveal } from "@/components/motion/Reveal";
 
@@ -14,7 +14,6 @@ export function ClassesPreview() {
     <Section>
       <div className="grid items-end gap-10 lg:grid-cols-[1fr_0.9fr]">
         <Reveal>
-          <SectionIndex>{home.classes.index}</SectionIndex>
           <Eyebrow>{home.classes.eyebrow}</Eyebrow>
           <DisplayTitle className="mt-4 max-w-4xl">{home.classes.title}</DisplayTitle>
           <GoldRule className="mt-8 max-w-xs" />
@@ -32,9 +31,8 @@ export function ClassesPreview() {
           <Link
             key={item.id}
             href={`/clases#${item.id}`}
-            className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 py-5 md:gap-8"
+            className="group grid grid-cols-[1fr_auto] items-center gap-4 py-5 md:gap-8"
           >
-            <span className="font-display text-sm text-bbh-gold">{item.index}</span>
             <div>
               <h3 className="font-display text-xl font-bold tracking-[0.08em] group-hover:text-bbh-gold md:text-3xl">
                 {item.name}

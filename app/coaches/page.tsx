@@ -16,7 +16,6 @@ export default function CoachesPage() {
   return (
     <>
       <PageHero
-        index="03"
         eyebrow="LOS MEJORES ENTRENADORES"
         title="ESPECIALISTAS EN RENDIMIENTO."
         lead="No están aquí para dirigir entrenamientos. Trabajan para formar atletas capaces de competir al más alto nivel."
@@ -25,7 +24,7 @@ export default function CoachesPage() {
       />
       <Section>
         <div className="grid gap-4 md:grid-cols-2">
-          {coaches.map((coach, index) => (
+          {coaches.map((coach) => (
             <article key={coach.id} className="overflow-hidden border border-white/8 bg-bbh-graphite">
               {coach.image ? (
                 <div className="relative aspect-[3/4] min-h-[320px]">
@@ -41,8 +40,7 @@ export default function CoachesPage() {
                 <MediaFrame alt={coach.imageAlt} className="min-h-[240px] md:min-h-[320px]" />
               )}
               <div className="p-6 md:p-8">
-                <p className="font-display text-[11px] tracking-[0.2em] text-bbh-gold">0{index + 1}</p>
-                <h2 className="mt-4 font-display text-3xl font-bold tracking-[0.08em]">{coach.name}</h2>
+                <h2 className="font-display text-3xl font-bold tracking-[0.08em]">{coach.name}</h2>
                 <p className="mt-2 text-sm text-bbh-gold">{coach.role}</p>
                 <p className="mt-1 text-sm text-bbh-off">{coach.focus}</p>
                 <p className="mt-4 leading-relaxed text-bbh-off">{coach.bio}</p>

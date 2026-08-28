@@ -53,8 +53,29 @@ export function Footer() {
                 WhatsApp {site.contact.whatsapp}
               </TrackedAnchor>
             </li>
-            {!isPlaceholder(site.contact.email) ? <li>{site.contact.email}</li> : null}
-            {!isPlaceholder(site.contact.instagram) ? <li>{site.contact.instagram}</li> : null}
+            {!isPlaceholder(site.contact.email) ? (
+              <li>
+                <a href={`mailto:${site.contact.email}`} className="hover:text-bbh-gold">
+                  {site.contact.email}
+                </a>
+              </li>
+            ) : null}
+            {site.contact.instagramUrl || !isPlaceholder(site.contact.instagram) ? (
+              <li>
+                {site.contact.instagramUrl ? (
+                  <a
+                    href={site.contact.instagramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-bbh-gold"
+                  >
+                    {isPlaceholder(site.contact.instagram) ? "Instagram" : site.contact.instagram}
+                  </a>
+                ) : (
+                  site.contact.instagram
+                )}
+              </li>
+            ) : null}
           </ul>
         </div>
       </div>

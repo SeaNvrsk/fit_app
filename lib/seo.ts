@@ -1,7 +1,25 @@
 import type { Metadata } from "next";
-import { isPlaceholder, site } from "@/content/site";
+import { isPlaceholder, mapsHref, site } from "@/content/site";
+import { media } from "@/content/media";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+function withProtocol(value: string) {
+  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+}
+
+const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const vercelUrl = (
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+  process.env.VERCEL_URL ||
+  ""
+).trim();
+const configuredIsLocal = configuredUrl
+  ? new URL(withProtocol(configuredUrl)).hostname === "localhost"
+  : false;
+
+export const siteUrl = withProtocol(
+  (configuredUrl && (!configuredIsLocal || !vercelUrl) ? configuredUrl : vercelUrl) ||
+    "http://localhost:3000",
+);
 
 export function absoluteUrl(path: string) {
   return new URL(path, siteUrl).toString();
@@ -13,6 +31,7 @@ export function pageMetadata(input: {
   path: string;
 }): Metadata {
   const url = absoluteUrl(input.path);
+  const socialImage = absoluteUrl(media.hero);
 
   return {
     title: input.title,
@@ -25,11 +44,13 @@ export function pageMetadata(input: {
       siteName: site.legalName,
       locale: "es_MX",
       type: "website",
+      images: [{ url: socialImage, alt: site.tagline }],
     },
     twitter: {
       card: "summary_large_image",
       title: input.title,
       description: input.description,
+      images: [socialImage],
     },
   };
 }
@@ -42,7 +63,9 @@ export function localBusinessJsonLd() {
     alternateName: site.name,
     description: site.description,
     url: siteUrl,
+    image: absoluteUrl(media.hero),
     slogan: site.tagline,
+    hasMap: mapsHref(),
     address: {
       "@type": "PostalAddress",
       streetAddress: `${site.contact.street}, ${site.contact.floor}`,

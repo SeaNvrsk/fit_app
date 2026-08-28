@@ -1,15 +1,15 @@
 "use client";
 
 import { home } from "@/content/home";
-import { DisplayTitle, Section, SectionIndex } from "@/components/ui/Section";
+import { DisplayTitle, Eyebrow, Section } from "@/components/ui/Section";
 import { GoldRule, Reveal } from "@/components/motion/Reveal";
 
 export function BrandStatement() {
   return (
     <Section>
       <Reveal>
-        <SectionIndex>{home.statement.index} — LA CASA</SectionIndex>
-        <DisplayTitle as="h2" className="max-w-5xl">
+        <Eyebrow>LA CASA</Eyebrow>
+        <DisplayTitle as="h2" className="mt-4 max-w-5xl">
           {home.statement.title[0]}
           <br />
           {home.statement.title[1]}

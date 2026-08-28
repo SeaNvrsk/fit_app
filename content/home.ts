@@ -1,6 +1,5 @@
 export const home = {
   hero: {
-    index: "01",
     kicker: "LA CASA DE LOS CAMPEONES",
     title: "LA CASA DE LOS CAMPEONES",
     englishTitle: "THE HOUSE OF THE CHAMPIONS",
@@ -11,7 +10,6 @@ export const home = {
     imageAlt: "Pesas rusas con luz dramática en La Casa de los Campeones",
   },
   statement: {
-    index: "02",
     title: ["NO VENIMOS A SER BUENOS.", "VENIMOS A SER LOS MEJORES."],
     paragraphs: [
       "BBH nace de una idea simple: si quieres llegar a la cima, tienes que entrenar con quienes ya conocen el camino.",
@@ -20,13 +18,11 @@ export const home = {
     ],
   },
   coaches: {
-    index: "03",
     eyebrow: "LOS MEJORES ENTRENADORES",
     title: "NO DIRIGEN CLASES. PREPARAN ATLETAS.",
     lead: "En BBH el entrenador no anima una sesión. Trabaja rendimiento: estándar, programación y exigencia para quien quiere el siguiente nivel.",
   },
   athletes: {
-    index: "04",
     eyebrow: "LOS MEJORES ATLETAS",
     title: "ENTRENA DONDE SE COMPITE.",
     lead: "Si te basta con estar en forma, hay muchos otros lugares. Si quieres marcas personales, podios y clasificaciones, entrenas junto a gente que también los persigue.",
@@ -35,7 +31,6 @@ export const home = {
     imageAlt: "Atleta de BBH en un agarre de élite durante el entrenamiento",
   },
   performance: {
-    index: "05",
     eyebrow: "RENDIMIENTO DE ÉLITE",
     title: "UN SISTEMA. NO UN GIMNASIO.",
     lead: "Fuerza, motor, entrenamiento híbrido y competencia en una sola arquitectura. Cada clase existe para mover el rendimiento, no para llenar un horario.",
@@ -47,13 +42,11 @@ export const home = {
     ],
   },
   classes: {
-    index: "06",
     eyebrow: "SISTEMA DE ENTRENAMIENTO",
     title: "SIETE DIRECCIONES. UN ESTÁNDAR.",
     lead: "Rendimiento HYROX es una pieza. El sistema es más amplio: tren inferior, tren superior, híbrido y motor.",
   },
   hyrox: {
-    index: "07",
     eyebrow: "HYROX",
     title: "UN PILAR. NO EL ÚNICO SENTIDO.",
     lead: "BBH entrena HYROX con seriedad: estaciones, transiciones y técnica de competencia. Pero la casa no existe por una carrera. Existe para crear campeones.",
@@ -61,7 +54,6 @@ export const home = {
     imageAlt: "Preparación de fuerza e HYROX en el piso de BBH",
   },
   community: {
-    index: "08",
     eyebrow: "COMUNIDAD",
     title: "UNA CASA. NO UN GIMNASIO COMERCIAL.",
     lead: "La comunidad de BBH se construye en el piso: gente que se exige, que compite y que eleva a quien entrena a su lado.",

@@ -4,7 +4,7 @@ import { Analytics } from "@/components/analytics/Analytics";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { site } from "@/content/site";
 import { pagesMeta } from "@/content/seo";
-import { localBusinessJsonLd, pageMetadata } from "@/lib/seo";
+import { localBusinessJsonLd, pageMetadata, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -19,12 +19,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   ...pageMetadata(pagesMeta.home),
-  title: {
-    default: pagesMeta.home.title,
-    template: "%s | BBH",
-  },
+  title: pagesMeta.home.title,
   keywords: [
     "HYROX",
     "entrenamiento HYROX",
@@ -36,7 +33,17 @@ export const metadata: Metadata = {
     "BBH",
     "La Casa de los Campeones",
   ],
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   authors: [{ name: "Anatolii Krasnikov", url: "https://instagram.com/an_cdmx" }],
   creator: "Anatolii Krasnikov",
   other: {

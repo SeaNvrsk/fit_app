@@ -15,7 +15,6 @@ export default function HorarioPage() {
   return (
     <>
       <PageHero
-        index="06"
         eyebrow="HORARIO"
         title="LA SEMANA EN LA CASA."
         lead="Reserva tu clase en tiempo real. El horario, los lugares y el pago se confirman en Fitune."

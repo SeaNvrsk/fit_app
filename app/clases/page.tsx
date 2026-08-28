@@ -15,7 +15,6 @@ export default function ClasesPage() {
   return (
     <>
       <PageHero
-        index="06"
         eyebrow="SISTEMA DE ENTRENAMIENTO"
         title="SIETE DIRECCIONES. UN ESTÁNDAR."
         lead="Fuerza, empuje, tracción, híbrido, motor y Rendimiento HYROX. El sistema existe para crear atletas, no para llenar un horario."
@@ -37,10 +36,7 @@ export default function ClasesPage() {
                 className="min-h-[280px]"
               />
               <div>
-                <p className="font-display text-[11px] tracking-[0.24em] text-bbh-gold">
-                  {item.index}
-                </p>
-                <h2 className="mt-3 font-display text-4xl font-bold tracking-[0.06em] md:text-5xl">
+                <h2 className="font-display text-4xl font-bold tracking-[0.06em] md:text-5xl">
                   {item.name}
                 </h2>
                 <p className="mt-4 text-lg text-bbh-off">{item.summary}</p>

@@ -15,7 +15,6 @@ export default function ContactoPage() {
   return (
     <>
       <PageHero
-        index="09"
         eyebrow="CONTACTO"
         title="ENTRENA CON NOSOTROS."
         lead="Si quieres el siguiente nivel, este es el primer paso. Completa el formulario o escribe por WhatsApp."

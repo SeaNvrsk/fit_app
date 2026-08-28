@@ -22,8 +22,8 @@ export const site = {
     phone: "+52 56 19915404",
     whatsapp: "+52 221 620 8661",
     whatsappUrl: "",
-    instagram: "[INSTAGRAM]",
-    instagramUrl: "",
+    instagram: "@bbh_performancelab",
+    instagramUrl: "https://www.instagram.com/bbh_performancelab/",
   },
   nav: [
     { label: "INICIO", href: "/" },
@@ -53,11 +53,17 @@ export function isPlaceholder(value: string) {
   return value.startsWith("[") && value.endsWith("]");
 }
 
-export function whatsappHref() {
-  if (site.contact.whatsappUrl) return site.contact.whatsappUrl;
+export function whatsappHref(message?: string) {
+  let href: string = site.contact.whatsappUrl;
   const digits = site.contact.whatsapp.replace(/\D/g, "");
-  if (!digits || isPlaceholder(site.contact.whatsapp)) return "/contacto";
-  return `https://wa.me/${digits}`;
+  if (!href) {
+    if (!digits || isPlaceholder(site.contact.whatsapp)) return "/contacto";
+    href = `https://wa.me/${digits}`;
+  }
+
+  if (!message) return href;
+  const separator = href.includes("?") ? "&" : "?";
+  return `${href}${separator}text=${encodeURIComponent(message)}`;
 }
 
 export function addressLines() {

@@ -4,13 +4,13 @@ Premium marketing site for BBH. Spanish only in this phase. Content lives in `co
 
 ## Stack
 
-- Next.js 15 (App Router)
+- Next.js 16 (App Router)
 - TypeScript
 - Tailwind CSS 4
 
 ## Run
 
-Requires Node 20+.
+Requires Node 20.9+.
 
 ```bash
 npm install
@@ -26,7 +26,6 @@ Edit `content/site.ts`:
 - city, address, email, phone
 - WhatsApp and Instagram URLs
 - coach names in `content/coaches.ts`
-- real schedule in `content/schedule.ts`
 - events in `content/events.ts`
 
 Drop real photos into `public/media/` and set the `image` fields. Empty paths keep cinematic frames.
@@ -46,6 +45,5 @@ Tracked events: `train_with_us`, `reservar`, `whatsapp`, `contact_submit`, `nav_
 ## Out of scope (next phase)
 
 - Payload CMS
-- Online booking
 - EN / RU
 - AWS deploy

@@ -22,14 +22,6 @@ export function Section({ id, children, className, tone = "black" }: Props) {
   );
 }
 
-export function SectionIndex({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="mb-4 font-display text-[11px] font-medium tracking-[0.28em] text-bbh-gold">
-      {children}
-    </p>
-  );
-}
-
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-display text-[12px] font-semibold uppercase tracking-[0.28em] text-bbh-gold">

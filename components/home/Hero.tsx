@@ -103,7 +103,7 @@ function HeroCopy() {
   return (
     <Reveal className="max-w-3xl">
       <p className="font-display text-[11px] tracking-[0.32em] text-bbh-gold">
-        01 — {home.hero.kicker}
+        {home.hero.kicker}
       </p>
       <p className="mt-5 font-display text-[11px] tracking-[0.28em] text-bbh-off/70">
         {site.pillars.join(" · ")}

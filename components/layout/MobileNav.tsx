@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { site, whatsappHref } from "@/content/site";
-import { track } from "@/lib/analytics";
 import { cx } from "@/lib/utils";
 import { TrackedAnchor, TrackedLink } from "@/components/ui/TrackedLink";
 
@@ -36,6 +35,17 @@ const icons = {
 export function MobileNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
 
   return (
     <>
@@ -106,10 +116,7 @@ export function MobileNav() {
             <TrackedLink
               href={site.cta.primary.href}
               event={site.cta.primary.event}
-              onClick={() => {
-                track(site.cta.primary.event);
-                setOpen(false);
-              }}
+              onClick={() => setOpen(false)}
               className="mt-4 bg-bbh-gold px-5 py-3 text-center font-display text-sm tracking-[0.18em] text-bbh-black"
             >
               {site.cta.primary.label}

@@ -1,7 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { site, isPlaceholder } from "@/content/site";
+import { FormEvent } from "react";
+import { site, isPlaceholder, whatsappHref } from "@/content/site";
 import { track } from "@/lib/analytics";
 
 const interests = [
@@ -12,8 +12,6 @@ const interests = [
 ];
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
-
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -26,33 +24,25 @@ export function ContactForm() {
 
     track("contact_submit", { interest });
 
+    const body = [
+      "Hola, quiero entrenar en BBH.",
+      "",
+      `Nombre: ${name}`,
+      `Correo: ${email}`,
+      `WhatsApp: ${phone || "No indicado"}`,
+      `Interés: ${interest}`,
+      message ? `Mensaje: ${message}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
     if (!isPlaceholder(site.contact.email)) {
-      const body = [
-        `Nombre: ${name}`,
-        `Correo: ${email}`,
-        `WhatsApp: ${phone}`,
-        `Interés: ${interest}`,
-        "",
-        message,
-      ].join("\n");
       window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent(
         `BBH — ${name}`,
       )}&body=${encodeURIComponent(body)}`;
+    } else {
+      window.location.href = whatsappHref(body);
     }
-
-    setSent(true);
-    form.reset();
-  }
-
-  if (sent) {
-    return (
-      <div className="border border-bbh-gold/40 bg-bbh-graphite p-8">
-        <p className="font-display text-2xl font-bold tracking-[0.08em]">RECIBIDO.</p>
-        <p className="mt-3 text-bbh-off">
-          Te contactamos para el siguiente paso. Si quieres ir más rápido, escribe por WhatsApp.
-        </p>
-      </div>
-    );
   }
 
   return (
@@ -86,7 +76,7 @@ export function ContactForm() {
         type="submit"
         className="bg-bbh-gold px-6 py-3 font-display text-[11px] font-semibold tracking-[0.18em] text-bbh-black hover:bg-[#e4b83a]"
       >
-        ENTRENA CON NOSOTROS
+        ENVIAR SOLICITUD
       </button>
     </form>
   );

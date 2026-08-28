@@ -17,7 +17,6 @@ export default function EventosPage() {
   return (
     <>
       <PageHero
-        index="08"
         eyebrow="EVENTOS"
         title="LA CASA TAMBIÉN COMPITE."
         lead="Contrarreloj, simulaciones y ventanas de preparación. La comunidad se mide en el piso, no en una red social."

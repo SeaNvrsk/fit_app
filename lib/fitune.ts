@@ -29,14 +29,6 @@ export function fitune() {
   };
 }
 
-export function isFituneReady() {
-  return Boolean(fitune().storefront);
-}
-
-export function bookHref() {
-  return "/horario#reservar";
-}
-
 export function fituneOrigin(src: string) {
   try {
     return new URL(src).origin;
