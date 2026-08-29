@@ -2,12 +2,12 @@ function env(name: string) {
   return (process.env[name] || "").trim();
 }
 
-const DEFAULT_STOREFRONT = "https://www.bbhperformance.com";
+const DEFAULT_STOREFRONT = "https://booking.bbhperformance.com";
 
 /**
  * Fitune tab slugs on a custom domain (not our marketing URLs):
  * Home `/` · Schedule `/activities` · Events `/events`
- * Appointments `/appointments` (BBH renamed this tab Personalizados) · Pricing `/pricing`
+ * Appointments `/appointments` (BBH renamed this tab Personalizados) · Memberships `/memberships`
  *
  * `/embed/{tab}` loads Fitune's widget layout instead of the full storefront
  * (the `/activities` site chrome is what made Horario look like a site-in-site).
@@ -25,7 +25,7 @@ export function fitune() {
     schedule: env("NEXT_PUBLIC_FITUNE_EMBED_SCHEDULE") || fituneWidget(base, "activities"),
     appointments: env("NEXT_PUBLIC_FITUNE_EMBED_APPOINTMENTS") || fituneWidget(base, "appointments"),
     events: env("NEXT_PUBLIC_FITUNE_EMBED_EVENTS") || fituneWidget(base, "events"),
-    memberships: env("NEXT_PUBLIC_FITUNE_EMBED_MEMBERSHIPS") || fituneWidget(base, "pricing"),
+    memberships: env("NEXT_PUBLIC_FITUNE_EMBED_MEMBERSHIPS") || fituneWidget(base, "memberships"),
   };
 }
 
