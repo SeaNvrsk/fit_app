@@ -18,7 +18,7 @@ export const site = {
     postalCode: "54026",
     city: "Tlalnepantla de Baz",
     state: "Méx.",
-    email: "[CORREO]",
+    email: "hola@bbhperformance.com",
     phone: "+52 56 19915404",
     whatsapp: "+52 221 620 8661",
     whatsappUrl: "",
