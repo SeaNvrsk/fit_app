@@ -10,8 +10,6 @@ type Props = {
 };
 
 const DEFAULT_HEIGHT = 960;
-/** Fitune storefront header is `h-16`. Keep the back-row title ("Choose an option") visible. */
-const HEADER_OFFSET = 64;
 /** Extra space so checkout "Next" / pay actions are not flush with the clip edge. */
 const CTA_BUFFER = 56;
 
@@ -35,18 +33,15 @@ export function FituneEmbed({ src, title, minHeight = "960px" }: Props) {
     return () => window.removeEventListener("message", onMessage);
   }, [floor, origin]);
 
-  const frameHeight = height;
-  const viewportHeight = Math.max(frameHeight - HEADER_OFFSET, floor - HEADER_OFFSET);
-
   return (
     <div>
-      <div className="overflow-hidden border border-white/10 bg-white">
-        <div className="relative overflow-hidden" style={{ height: viewportHeight }}>
+      <div className="overflow-hidden border border-white/10 bg-bbh-black">
+        <div className="relative overflow-hidden" style={{ height }}>
           <iframe
             src={src}
             title={title}
             className="absolute left-0 w-full border-0"
-            style={{ top: -HEADER_OFFSET, height: frameHeight }}
+            style={{ top: 0, height }}
             allow="payment *; clipboard-write"
             referrerPolicy="no-referrer-when-downgrade"
           />

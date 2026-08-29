@@ -3,29 +3,27 @@ function env(name: string) {
 }
 
 const DEFAULT_STOREFRONT = "https://booking.bbhperformance.com";
+const DEFAULT_EMBED_BASE =
+  "https://www.myfitune.io/embed/build-beyond-humans-performancelab";
 
 /**
- * Fitune tab slugs on a custom domain (not our marketing URLs):
- * Home `/` · Schedule `/activities` · Events `/events`
- * Appointments `/appointments` (BBH renamed this tab Personalizados) · Memberships `/memberships`
- *
- * `/embed/{tab}` loads Fitune's widget layout instead of the full storefront
- * (the `/activities` site chrome is what made Horario look like a site-in-site).
+ * Fitune's generated widget URLs use myfitune.io so the dedicated embed design
+ * is applied. The branded booking domain remains the full-storefront fallback.
  */
-function fituneWidget(base: string, tab: string) {
-  return `${base}/embed/${tab.replace(/^\//, "")}`;
-}
-
 export function fitune() {
   const storefront = env("NEXT_PUBLIC_FITUNE_STOREFRONT_URL") || DEFAULT_STOREFRONT;
   const base = storefront.replace(/\/$/, "");
 
   return {
     storefront: base,
-    schedule: env("NEXT_PUBLIC_FITUNE_EMBED_SCHEDULE") || fituneWidget(base, "activities"),
-    appointments: env("NEXT_PUBLIC_FITUNE_EMBED_APPOINTMENTS") || fituneWidget(base, "appointments"),
-    events: env("NEXT_PUBLIC_FITUNE_EMBED_EVENTS") || fituneWidget(base, "events"),
-    memberships: env("NEXT_PUBLIC_FITUNE_EMBED_MEMBERSHIPS") || fituneWidget(base, "memberships"),
+    schedule:
+      env("NEXT_PUBLIC_FITUNE_EMBED_SCHEDULE") || `${DEFAULT_EMBED_BASE}/activities`,
+    appointments:
+      env("NEXT_PUBLIC_FITUNE_EMBED_APPOINTMENTS") ||
+      `${DEFAULT_EMBED_BASE}/appointments`,
+    events: env("NEXT_PUBLIC_FITUNE_EMBED_EVENTS") || `${DEFAULT_EMBED_BASE}/events`,
+    memberships:
+      env("NEXT_PUBLIC_FITUNE_EMBED_MEMBERSHIPS") || `${DEFAULT_EMBED_BASE}/pricing`,
   };
 }
 
