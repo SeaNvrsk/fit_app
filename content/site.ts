@@ -20,7 +20,7 @@ export const site = {
     state: "Méx.",
     email: "hola@bbhperformance.com",
     phone: "+52 56 19915404",
-    whatsapp: "+52 221 620 8661",
+    whatsapp: "+52 55 2855 1174",
     whatsappUrl: "",
     instagram: "@bbh_performancelab",
     instagramUrl: "https://www.instagram.com/bbh_performancelab/",
